@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Levitador Magnético</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="text-center py-5 position-relative">
+    <h1 class="titulo">Levitador Magnético</h1>
+    <p class="subtitulo">Visualización de resultados en tiempo real</p>
+
+    <!-- Botón de modo oscuro -->
+    <button id="theme-toggle" class="btn btn-outline-light rounded-pill position-absolute top-0 end-0 m-4 px-3">
+      🌙
+    </button>
+
+    <!-- Botón ir al gráfico -->
+    <button id="btn-grafico" class="btn btn-primary rounded-pill position-absolute top-0 start-0 m-4 px-3">
+      📊 Ver gráfica
+    </button>
+  </header>
+
+  <main class="container py-4">
+    <!-- Filtro por fecha -->
+    <div class="row mb-5 justify-content-center">
+      <div class="col-md-4 text-center">
+        <input type="date" id="fechaFiltro" class="form-control filtro" placeholder="Filtrar por fecha">
+      </div>
+    </div>
+
+    <!-- Mensaje -->
+    <div id="mensaje" class="text-center text-muted mb-3 fade-in">Cargando datos...</div>
+
+    <!-- Tabla -->
+    <div class="table-responsive mb-5 fade-in">
+      <table class="table table-striped table-hover align-middle" id="tabla-resultados">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Posición (mm)</th>
+            <th>Estabilidad</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Gráfico -->
+    <div class="grafico-container fade-in" id="seccion-grafico">
+      <canvas id="graficoPosicion" height="120"></canvas>
+    </div>
+  </main>
+
+  <footer class="text-center py-4 text-muted">
+    Universidad Mariano Galvez - Proyecto de Física II y Programación II
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* Fuente y colores generales */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #0d6efd, #6c63ff);
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  position: relative;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeSlide 1s forwards 0.3s;
+}
+
+.subtitulo {
+  font-size: 1.2rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeSlide 1s forwards 0.6s;
+}
+
+/* Fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+  animation-delay: 0.8s;
+}
+
+/* Tabla */
+.table {
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(13, 110, 253, 0.15) !important;
+  transform: scale(1.02);
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Input fecha */
+input[type="date"].filtro {
+  max-width: 250px;
+  margin: 0 auto;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+input[type="date"].filtro:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 10px rgba(13, 110, 253, 0.3);
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlide {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ======== DARK MODE ======== */
+body.dark-mode {
+  background: #121212;
+  color: #eaeaea;
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #1f1f1f, #333);
+}
+
+body.dark-mode .table {
+  color: #eaeaea;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .table-hover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode input[type="date"].filtro {
+  background: #222;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark-mode footer {
+  color: #aaa;
+}
